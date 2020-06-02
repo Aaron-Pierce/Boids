@@ -184,8 +184,10 @@ class Boid {
 
 let boids = [];
 
+const MAGIC_BIRD_COUNT_CONSTANT = 41472; //specifically chosen such that 1920 * 1080 / M_B_C_C = 50
+                                        //because 50 is way too many boids for a phone
 
-for (let i = 0; i < 50; i++) {
+for (let i = 0; i < window.innerWidth * window.innerHeight / MAGIC_BIRD_COUNT_CONSTANT; i++) {
     boids.push(new Boid());
 }
 
